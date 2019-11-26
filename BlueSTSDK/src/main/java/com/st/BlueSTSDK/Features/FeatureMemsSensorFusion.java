@@ -51,7 +51,7 @@ import com.st.BlueSTSDK.Utils.NumberConversion;
  */
 public class FeatureMemsSensorFusion extends FeatureAutoConfigurable {
 
-    public static final String FEATURE_NAME = "MEMS Sensor Fusion";
+    public static final String FEATURE_NAME = "Calibrate Heel2toe";
     public static final String FEATURE_UNIT = null;
     public static final String[] FEATURE_DATA_NAME = new String[]{"qi", "qj", "qk", "qs"};
     public static final float DATA_MAX = 1.0f;
@@ -75,7 +75,7 @@ public class FeatureMemsSensorFusion extends FeatureAutoConfigurable {
     public static final int QS_INDEX = 3;
 
     /**
-     * build a Mems sensor fusion feature
+     * build a Calibrate Heel2toe feature
      *
      * @param node note that will send data to this feature
      */

@@ -50,7 +50,7 @@ import java.util.Date;
  */
 public class FeatureMemsSensorFusionCompact extends FeatureMemsSensorFusion {
 
-    public static final String FEATURE_NAME = "MEMS Sensor Fusion (Compact)";
+    public static final String FEATURE_NAME = "Calibrate Heel2toe (Compact)";
 
     /**
      * since the package will contain more than one quaternion, the class assume that it will
