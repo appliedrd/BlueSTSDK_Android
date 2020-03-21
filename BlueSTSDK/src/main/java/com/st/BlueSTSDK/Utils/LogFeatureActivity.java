@@ -124,15 +124,15 @@ public abstract class LogFeatureActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_log_feature, menu);
+        //getMenuInflater().inflate(R.menu.menu_log_feature, menu);
 
-        if (mCurrentLogger==null) {
+       /* if (mCurrentLogger==null) {
             menu.findItem(R.id.startLog).setVisible(true);
             menu.findItem(R.id.stopLog).setVisible(false);
         } else {
             menu.findItem(R.id.startLog).setVisible(false);
             menu.findItem(R.id.stopLog).setVisible(true);
-        }//if-else
+        }//if-else*/
 
         return super.onCreateOptionsMenu(menu);
     }
