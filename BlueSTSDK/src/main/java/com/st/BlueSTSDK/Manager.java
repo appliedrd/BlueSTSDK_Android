@@ -29,16 +29,15 @@ package com.st.BlueSTSDK;
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
 
 import android.bluetooth.le.ScanFilter;
 import android.bluetooth.le.ScanSettings;
 import android.os.Build;
 import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.annotation.RequiresPermission;
-import android.support.annotation.WorkerThread;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresPermission;
+import androidx.annotation.WorkerThread;
 import android.util.Log;
 import android.util.SparseArray;
 
@@ -52,7 +51,6 @@ import com.st.BlueSTSDK.Utils.advertise.LeScanCallback;
 import com.st.BlueSTSDK.Utils.advertise.ScanCallbackBridge;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
