@@ -1,3 +1,6 @@
+# Original version for Heel2Toe REVB
+branch is master_REVB
+
 # BlueST SDK
 
 BlueST is a multi-platform library (Android and iOS supported) that permits easy access to the data exported by a Bluetooth Low Energy (BLE) device that implements the BlueST protocol.
