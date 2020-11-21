@@ -466,7 +466,7 @@ public abstract class Feature {
      * @param data array of data to send as command parameters, can be an empty array
      * @return true if the node has the command characteristic
      */
-    protected boolean sendCommand(byte commandType,@NonNull byte[] data){
+    public boolean sendCommand(byte commandType, @NonNull byte[] data){
         return mParent.sendCommandMessage(this,commandType,data);
     }
 
