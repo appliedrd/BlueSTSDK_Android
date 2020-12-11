@@ -1,7 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'com.google.gms.google-services'
 
 android {
 
@@ -33,6 +32,13 @@ android {
     }
     productFlavors {
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        disable 'MissingTranslation'
+    }
 
 }
 
@@ -47,7 +53,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage:19.2.0'
 
     testImplementation "junit:junit:4.13.1"
-    testImplementation "org.mockito:mockito-core:3.6.0"
+    testImplementation 'org.mockito:mockito-core:3.6.28'
     testImplementation 'org.robolectric:robolectric:4.4'
 
     //testImplementation 'org.robolectric:android-all:5.0.0_r2-robolectric-1'
