@@ -50,8 +50,9 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  * @author STMicroelectronics - Central Labs.
  * @version 1.0
  */
-public abstract class Feature {
 
+public abstract class Feature {
+    public static final boolean debugThis = false;
     /**
      * pool of thread used for notify to the listeners that the feature have new data
      */
@@ -109,6 +110,12 @@ public abstract class Feature {
      */
     protected Field[] mDataDesc;
 
+    public long frequencyInspector;
+    public int sampleCounter;
+    public int samplesCollected[];
+    public int samplesCollectedDelta[];
+    public int secondsCounter;
+
     /**
      * check if the sample has valid data in the index position
      * @param s sample to test
@@ -144,6 +151,13 @@ public abstract class Feature {
         mParent = n;
         mIsEnabled = false;
         mDataDesc = dataDesc;
+        if (debugThis) {
+            frequencyInspector = System.currentTimeMillis();
+            sampleCounter = 0;
+            secondsCounter = 0;
+            samplesCollected = new int[10000];
+            samplesCollectedDelta = new int[10000];
+        }
     }//
 
     /**
@@ -347,6 +361,21 @@ public abstract class Feature {
             //pass to the log only the byte that we have read
             logFeatureUpdate(java.util.Arrays.copyOfRange(data, dataOffset, dataOffset + res.nReadByte),
                     newSample);
+
+            if (debugThis) {
+                sampleCounter++;
+                if (frequencyInspector < System.currentTimeMillis() - 1000) {
+                    frequencyInspector = System.currentTimeMillis();
+                    samplesCollected[secondsCounter] = sampleCounter;
+                    if (secondsCounter == 0)
+                        samplesCollectedDelta[secondsCounter] = sampleCounter;
+                    else {
+                        samplesCollectedDelta[secondsCounter] = sampleCounter - samplesCollected[secondsCounter - 1];
+                    }
+                    secondsCounter++;
+                    sampleCounter = 0;
+                }
+            }
         }
         return res.nReadByte;
     }//update

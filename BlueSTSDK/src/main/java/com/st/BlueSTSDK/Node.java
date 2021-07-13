@@ -41,12 +41,13 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
+import android.util.Log;
+import android.util.SparseArray;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.WorkerThread;
-import android.util.Log;
-import android.util.SparseArray;
 
 import com.st.BlueSTSDK.Features.FeatureGenPurpose;
 import com.st.BlueSTSDK.Utils.BLENodeDefines;
@@ -2073,8 +2074,8 @@ public class Node{
         final BluetoothGattCharacteristic writeTo = mFeatureCommand != null ? mFeatureCommand :
                 characteristic;
 
-        if (characteristic == null || !charCanBeWrite(writeTo))
-            return false;
+//        if (characteristic == null || !charCanBeWrite(writeTo))
+//            return false;
 
 
         if(writeTo==mFeatureCommand) {
